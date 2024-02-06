@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+            background: linear-gradient(#3640af, #301a74);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            width: 400px;
+            background: rgb(4, 4, 4);
+            padding: 30px 20px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 0 50px 0 rgb(193, 192, 192);
+        }
+
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 30px;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        label{
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: rgb(131, 251, 211);
+            box-shadow: 0 0 5px rgb(227, 227, 227);
+            color: black;
+            outline: none;
+            border: none;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            scale: 1.02;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <div class="content">
+            <label for="username">UserName</label>
+            <input type="text" name="" id="username" placeholder="Enter Your Name">
+            <label for="email">Email</label>
+            <input type="email" name="" id="email" placeholder="Enter Your Email">
+            <label for="password">Password</label>
+            <input type="password" name="" id="password" placeholder=" Enter Your Password">
+            <button onclick="Sign()">Sign Up</button>
+        </div>
+    </div>
+
+    <script>
+
+        var username = document.getElementById('username')
+        var email = document.getElementById('email')
+        var password = document.getElementById('password')
+
+        function Sign() {
+            if(!username.value || !email.value || !password.value){
+                alert("Please Fill Out All Fields");
+                return;
+            }
+            localStorage.setItem('user', username.value)
+            localStorage.setItem('email', email.value)
+            localStorage.setItem('password', password.value)
+            window.location.href = 'login.html'
+
+        }
+
+
+    </script>
+</body>
+
+</html>

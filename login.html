@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+            background: linear-gradient(#6f74aa, #051bbd);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            width: 400px;
+            background: rgb(86, 17, 17);
+            padding: 30px 20px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 0 50px 0 rgb(193, 192, 192);
+        }
+        .content h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 30px;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f6ff8e;
+            box-shadow: 0 0 5px rgb(58, 58, 58);
+            color: black;
+            outline: none;
+            border: none;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            scale: 1.02;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <h1>Cheacking Your Details</h1>
+        <label for="email">Email</label>
+        <input type="email" name="" id="email">
+        <label for="password">Password</label>
+        <input type="password" name="" id="password">
+        <button onclick="login()">Login</button>
+    </div>
+
+<script>
+
+var loginEmail = document.getElementById('email')
+var loginPass = document.getElementById('password')
+
+function login(){
+
+    var email = localStorage.getItem('email')
+    var pass = localStorage.getItem('password')
+
+    if(loginEmail.value == email && loginPass.value == pass){
+        alert("Congratulations Login Your Account")
+        window.location.href='dashbord.html'
+    }else{
+        alert('Plz Enter Your Right Email Or Password ')
+    }
+}
+</script>
+</body>
+</html>
